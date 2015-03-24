@@ -9,6 +9,52 @@ Here is my notes project's pages.
 
 <hr>
 
+<h3>Tags</h3>
+<!--
+{% for tag in site.tags %}
+<a href="#{{ tag[0] }}">{{ tag[0] }}</a>
+{% endfor %}
+-->
+{% capture tags %}
+  {% for tag in site.tags %}
+    {{ tag[0] }}
+  {% endfor %}
+{% endcapture %}
+{% assign sortedtags = tags | split:' ' | sort %}
+
+{% for tag in sortedtags %}
+  <h4 id="{{ tag }}">{{ tag }} ({{ site.tags[tag].size }})</h4>
+  <ul>
+  {% for post in site.tags[tag] %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+{% endfor %}
+
+<h3>Categories</h3>
+<!--
+{% for cate in site.categories %}
+<a href="#{{ cate[0] }}">{{ cate[0] }}</a>
+{% endfor %}
+-->
+{% capture tags %}
+  {% for tag in site.categories %}
+    {{ tag[0] }}
+  {% endfor %}
+{% endcapture %}
+{% assign sortedtags = tags | split:' ' | sort %}
+
+{% for tag in sortedtags %}
+  <h4 id="{{ tag }}">{{ tag }} {{ tag }}({{ site.categories[tag].size }})</h4>
+  <ul>
+  {% for post in site.categories[tag] %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+{% endfor %}
+
+<hr>
+
 <h3>Pages</h3>
 <ul>
     {% for p in site.pages %}
