@@ -5,7 +5,8 @@
 <head>
 
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
+  <!-- http://www.ruanyifeng.com/blog/2012/05/responsive_web_design.html -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ page.title }}</title>
 
   <link rel="stylesheet" href="{{ site.baseurl }}/css/pygments.css" type="text/css" />
@@ -14,14 +15,14 @@
     body { color: #7B7F88; background-color: #1B1C1E; }
     h1,h2,h3,h4,h5,h6 { color: #E7E6DF; }
     hr { color: #28292B; }
-    <!-- according http://www.thismanslife.co.uk/ -->
-
-    <!-- .highlight pre { white-space: pre; overflow: auto; } -->
-<!--
+    /* according http://www.thismanslife.co.uk/ */
+    body { font-size: 100%; } /* http://www.ruanyifeng.com/blog/2012/05/responsive_web_design.html */
+    /* .highlight pre { white-space: pre; overflow: auto; } */
+/*
     .highlight .lineno { color: #ccc; display:inline-block; padding: 0 5px; border-right:1px solid #ccc; }
     .highlight pre { background-color: #808080; border: 1px solid #cccccc; }
     .highlight pre code { display: block; white-space: pre; overflow-x: auto; word-wrap: normal; }
--->
+*/
   </style>
 
 </head>
