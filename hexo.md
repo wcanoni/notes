@@ -31,11 +31,10 @@ tags: [hexo,node]
 放菜油，
 炒，加盐，
 加水，出锅。
-择菜，洗菜，切菜，
-放菜油，
-炒，加盐，
-加水，出锅。
-择菜，洗菜，切菜，
+择菜*洗菜*切菜**放菜油**炒加盐加水出锅。
+择
+菜，洗
+菜，切菜，
 放菜油，
 炒，加盐，
 加水，出锅。
@@ -70,6 +69,14 @@ tags: [hexo,node]
 
 [github](https://github.com)
 
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+animals
+
 barking dog | flying bird | sleeping cat
 ----|:----:|---:
 foo | foo  | foo
@@ -85,3 +92,13 @@ baz | baz  | baz
 ![][2]
 [2]: http://latex.codecogs.com/gif.latex?\\sqrt[3]{a^2+b^2}
 
+<table class="table table-bordered table-striped table-condensed">  
+    <tr>  
+        <td>北京</td>  
+    <td>雾霾</td>  
+    </tr>  
+    <tr>  
+        <td>深圳</td>  
+    <td>暴雨</td>  
+    </tr>  
+</table>  
