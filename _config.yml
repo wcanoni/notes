@@ -1,2 +1,5 @@
+markdown: redcarpet
+redcarpet:
+    extensions: ["tables"]
 baseurl: /notes
 pygments: true
