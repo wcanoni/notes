@@ -1,6 +1,6 @@
 ---
 layout: default
-title: hexo静态网页生成器
+title: hexo静态网页
 category: hexo
 tags: [hexo,node]
 ---
