@@ -5,9 +5,9 @@ category: hexo
 tags: [hexo,node]
 ---
 
-## {{ page.title }} ##
+# {{ page.title }}
 
-### hexo, node.js ###
+## hexo, node.js
 
 * nvm
 
@@ -15,7 +15,7 @@ tags: [hexo,node]
 
 * hexo
 
-### 与jekyll不同，hexo并非github原生支持
+## 与jekyll不同，hexo并非github原生支持
 * 蔬菜
     1. 青菜
     2. 萝卜
