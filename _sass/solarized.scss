@@ -1,0 +1,404 @@
+/*
+---
+---
+
+for the scss snippet file which will be imported and located in _sass directory,
+it should not have a front matter, take care of it!!
+
+and there is no need for the scss snippet file to be named with starting _ character.
+
+in main style.scss, the @import statement with only scss snippet file basename, no suffix, no path either.
+*/
+
+/*
+By both of below webpages:
+
+http://ethanschoonover.com/solarized
+http://thomasf.github.io/solarized-css/
+
+|SOLARIZED|HEX    |16/8|TERMCOL  |XTERM/HEX  |L*A*B     |RGB        |HSB       |
+|:--------|-------|---:|:--------|----------:|---------:|----------:|---------:|
+|base03   |#002b36| 8/4|brblack  |234 #1c1c1c|15 -12 -12|  0  43  54|193 100 21|
+|base02   |#073642| 0/4|black    |235 #262626|20 -12 -12|  7  54  66|192  90 26|
+|base01   |#586e75|10/7|brgreen  |240 #585858|45 -07 -07| 88 110 117|194  25 46|
+|base00   |#657b83|11/7|bryellow |241 #626262|50 -07 -07|101 123 131|195  23 51|
+|base0    |#839496|12/6|brblue   |244 #808080|60 -06 -03|131 148 150|186  13 59|
+|base1    |#93a1a1|14/4|brcyan   |245 #8a8a8a|65 -05 -02|147 161 161|180   9 63|
+|base2    |#eee8d5| 7/7|white    |254 #e4e4e4|92 -00  10|238 232 213| 44  11 93|
+|base3    |#fdf6e3|15/7|brwhite  |230 #ffffd7|97  00  10|253 246 227| 44  10 99|
+|yellow   |#b58900| 3/3|yellow   |136 #af8700|60  10  65|181 137   0| 45 100 71|
+|orange   |#cb4b16| 9/3|brred    |166 #d75f00|50  50  55|203  75  22| 18  89 80|
+|red      |#dc322f| 1/1|red      |160 #d70000|50  65  45|220  50  47|  1  79 86|
+|magenta  |#d33682| 5/5|magenta  |125 #af005f|50  65 -05|211  54 130|331  74 83|
+|violet   |#6c71c4|13/5|brmagenta| 61 #5f5faf|50  15 -45|108 113 196|237  45 77|
+|blue     |#268bd2| 4/4|blue     | 33 #0087ff|55 -10 -45| 38 139 210|205  82 82|
+|cyan     |#2aa198| 6/6|cyan     | 37 #00afaf|60 -35 -05| 42 161 152|175  74 63|
+|green    |#859900| 2/2|green    | 64 #5f8700|60 -20  65|133 153   0| 68 100 60|
+
+for light, colors from light to dark:
+base3 -> base2 -> base1 -> base0 -> base00 -> base01 -> base02 -> base03,
+
+for dark, colors from dark to light:
+base03 -> base02 -> base01 -> base00 -> base0 -> base1 -> base2 -> base3,
+*/
+
+/*
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+*/
+
+// base colors, from dark to light
+$base03: #002b36;
+$base02: #073642;
+$base01: #586e75;
+$base00: #657b83;
+$base0:  #839496;
+$base1:  #93a1a1;
+$base2:  #eee8d5;
+$base3:  #fdf6e3;
+// other 'pure' colors
+$yellow:  #b58900;
+$orange:  #cb4b16;
+$red:     #dc322f;
+$magenta: #d33682;
+$violet:  #6c71c4;
+$blue:    #268bd2;
+$cyan:    #2aa198;
+$green:   #859900;
+
+/*
+// take the case of dark, $rebase3 to $rbase03, from light to dark
+$rebase3:  $base03;
+$rebase2:  $base02;
+$rebase1:  $base01; // optional emphazied content
+$rebase0:  $base00; // body text / default code / primary content
+$rebase00: $base0; 
+$rebase01: $base1;  // comment / secondary content
+$rebase02: $base2;  // background highlights
+$rebase03: $base3;  // background
+// for dark background
+$rebase3:  $base3;
+$rebase2:  $base2;
+$rebase1:  $base1;  // optional emphazied content
+$rebase0:  $base0;  // body text / default code / primary content
+$rebase00: $base00;
+$rebase01: $base01; // comment / secondary content
+$rebase02: $base02; // background highlights
+$rebase03: $base03; // background
+*/
+
+// @mixin rebase
+@mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
+{
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  nav,
+  section,
+  summary {
+    display: block;
+  }
+  audio,
+  canvas,
+  video {
+    display: inline-block;
+  }
+  audio:not([controls]) {
+    display: none;
+    height: 0;
+  }
+  [hidden] {
+    display: none;
+  }
+  html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+  }
+  a:focus {
+    outline: thin dotted;
+  }
+  a:active,
+  a:hover {
+    outline: 0;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  abbr[title] {
+    border-bottom: 1px dotted;
+  }
+  b,
+  strong {
+    font-weight: bold;
+  }
+  dfn {
+    font-style: italic;
+  }
+  mark {
+    background: #ff0;
+    color: #000;
+  }
+  code,
+  kbd,
+  pre,
+  samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+  }
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+  }
+  small {
+    font-size: 80%;
+  }
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sup {
+    top: -0.5em;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  img {
+    border: 0;
+  }
+  svg:not(:root) {
+    overflow: hidden;
+  }
+  figure {
+    margin: 0;
+  }
+  fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+  }
+  legend {
+    border: 0;
+    padding: 0;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+  }
+  button,
+  input {
+    line-height: normal;
+  }
+  button,
+  html input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+  }
+  button[disabled],
+  input[disabled] {
+    cursor: default;
+  }
+  input[type="checkbox"],
+  input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+  }
+  input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+  }
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  button::-moz-focus-inner,
+  input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+  textarea {
+    overflow: auto;
+    vertical-align: top;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  html {
+    font-family: 'PT Sans', sans-serif;
+  }
+  pre,
+  code {
+    font-family: 'Inconsolata', sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 700;
+  }
+  html {
+    /* background-color: #073642; */
+    color: $rebase0; // body text / default code / primary content
+    /* margin: 1em; */
+  }
+  body {
+    background-color: $rebase03; // background
+    margin: 0 auto;
+    /* max-width: 23cm;
+    border: 1pt solid #586e75; */
+    padding: 1em;
+  }
+  code {
+    background-color: $rebase02; // background highlights
+    padding: 2px;
+  }
+  a {
+    color: #b58900;
+  }
+  a:visited {
+    color: #cb4b16;
+  }
+  a:hover {
+    color: #cb4b16;
+  }
+  h1 {
+    /* color: #d33682; */
+    color: $rebase1; // optional emphazied content
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    /* color: #859900; */
+    color: $rebase1; // optional emphazied content
+  }
+  pre {
+    background-color: $rebase03; // background
+    color: $rebase0; // body text / default code / primary content
+    border: 1pt solid $rebase01; // comment / secondary content
+    padding: 1em;
+    box-shadow: 5pt 5pt 8pt $rebase02; // background highlights
+  }
+  pre code {
+    background-color: $rebase03; // background
+  }
+  h1 {
+    font-size: 2.8em;
+  }
+  h2 {
+    font-size: 2.4em;
+  }
+  h3 {
+    font-size: 1.8em;
+  }
+  h4 {
+    font-size: 1.4em;
+  }
+  h5 {
+    font-size: 1.3em;
+  }
+  h6 {
+    font-size: 1.15em;
+  }
+  .tag {
+    background-color: #073642;
+    color: #d33682;
+    padding: 0 0.2em;
+  }
+  .todo,
+  .next,
+  .done {
+    color: #002b36;
+    background-color: #dc322f;
+    padding: 0 0.2em;
+  }
+  .tag {
+    -webkit-border-radius: 0.35em;
+    -moz-border-radius: 0.35em;
+    border-radius: 0.35em;
+  }
+  .TODO {
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
+    background-color: #2aa198;
+  }
+  .NEXT {
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
+    background-color: #268bd2;
+  }
+  .ACTIVE {
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
+    background-color: #268bd2;
+  }
+  .DONE {
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
+    background-color: #859900;
+  }
+  .WAITING {
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
+    background-color: #cb4b16;
+  }
+  .HOLD {
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
+    background-color: #d33682;
+  }
+  .NOTE {
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
+    background-color: #d33682;
+  }
+  .CANCELLED {
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    border-radius: 0.2em;
+    background-color: #859900;
+  }
+} // end of @mixin rebase
+
+$solarized_color: light !default;
+
+@if $solarized_color == light {
+  @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)
+} @else {
+  @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)
+}
