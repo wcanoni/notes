@@ -137,3 +137,12 @@ baz | baz  | baz
     <td>暴雨</td>  
     </tr>  
 </table>  
+
+![](http://latex.codecogs.com/png.latex?\dpi{100}&space;\bg_red&space;\large&space;{\color{Blue}&space;$$a^2$$})
+
+
+这个只能在博客园的博客里面用么？请问对于其它的，比如 msn spaces，有怎样比较方面的方法？
+WordPress也有一个比较方便的API，比如：
+http://l.wordpress.com/latex.php?latex=\LaTeX&bg=ff0000&fg=ffffff&s=0
+
+latex是代码部分，bg是背景颜色，fg是前景颜色，s是字体大小。
