@@ -9,8 +9,10 @@ tags: vim emacs
 
 Here is my other page.
 
+    <xml>
     printf()
     main()
-
+    <bla>printf()</bla>
+    </xml>
 ---
 ok
